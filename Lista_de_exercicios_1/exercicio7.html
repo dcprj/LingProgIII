@@ -1,0 +1,28 @@
+<!-- 
+    7. Entrar com o dia e o mês de uma data e informar quantos dias se passaram desde o início
+    do ano. Esqueça a questão dos anos bissextos e considere sempre que um mês possui 30 dias.
+-->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cálculo de Dias por Data</title>
+    <script>
+        var totalDias = 0;
+        var contador = 1;
+        var dia = parseInt(prompt("Digite o dia do mês."));
+        var mes = parseInt(prompt("Digite o número do mês."));
+        if (mes==1) {
+            totalDias = dia;
+        }
+        else {
+            totalDias = (mes-1)*30+dia;
+        }
+        alert("Total aproximado de dias desde o início do ano "+totalDias+" dias.");        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
