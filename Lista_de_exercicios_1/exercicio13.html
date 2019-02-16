@@ -1,0 +1,27 @@
+<!-- 
+    13. A empresa Hipotheticus paga R$10,00 por hora normal trabalhada, e R$15,00 por hora
+    extra. Faça um algoritmo para calcular e imprimir o salário bruto e o salário líquido de um
+    determinado funcionário. Considere que o salário líquido é igual ao salário bruto
+    descontando-se 10% de impostos.
+-->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cálculo de Salário</title>
+    <script>
+        var horasNormais = parseFloat(prompt("Digite a quantidade de horas normais trabalhadas."));
+        var horasExtras = parseFloat(prompt("Digite a quantidade de horas extras trabalhadas."));
+        var salarioBruto = (horasNormais * 10) + (horasExtras * 15);
+        var salarioLiquido = salarioBruto - salarioBruto * 0.10;
+        alert(
+            "Salário Bruto: R$ " + salarioBruto + "\n" +
+            "Salário Líquido: R$ " + salarioLiquido + "\n"
+        );        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
