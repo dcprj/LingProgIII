@@ -1,0 +1,33 @@
+<!-- 
+    11. A lanchonete Gostosura vende apenas um tipo de sanduíche, cujo recheio inclui duas fatias
+    de queijo, uma fatia de presunto e uma rodela de hambúrguer. Sabendo que cada fatia de
+    queijo ou presunto pesa 50 gramas, e que a rodela de hambúrguer pesa 100 gramas, faça um
+    algoritmo em que o dono forneça a quantidade de sanduíches a fazer, e a máquina informe
+    as quantidades (em quilos) de queijo, presunto e carne necessários para compra.
+-->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cálculo de Compra de Matéria-Prima</title>
+    <script>
+        var quantidadeSanduiches = prompt("Digite a quantidade de sanduíches.");
+        var fatiasQueijo = quantidadeSanduiches * 2;
+        var fatiasPresunto = quantidadeSanduiches;
+        var rodelasHamburguer = quantidadeSanduiches;
+        var quantidadeQueijo = parseFloat(fatiasQueijo * 50 / 1000);
+        var quantidadePresunto = parseFloat(fatiasPresunto * 50 / 1000);
+        var quantidadeHamburguer = parseFloat(rodelasHamburguer * 100 / 1000);
+        alert(
+            "Será necessário comprar:\n" +
+            quantidadeQueijo + " kg de queijo\n" +
+            quantidadePresunto + " kg de presunto\n" +
+            quantidadeHamburguer + " kg de hamburguer\n"
+        );        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
