@@ -1,3 +1,3 @@
 # LingProgIII
-Lista de Exercícios da Disciplina de Linguagem de Programação III no USJ
+Lista de Exercícios 1 da Disciplina de Linguagem de Programação III no USJ
 Javascript
