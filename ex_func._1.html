@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </meta>
+
+    <title>Funções JavaScript</title>
+
+    <script>
+        // -------------------------------------------------------
+        function exibirMensagem() {
+            alert('exibindo mensagens');
+        }
+
+        function semRetorno() {
+            var num1 = 10;
+            var num2 = 20;
+            alert(num1 + num2);
+        }
+
+        function comRetorno() {
+            var num1 = 10;
+            var num2 = 40;
+            return (num1 + num2);
+        }
+
+        function comParametros(vl1, vl2) {
+            var soma = vl1 + vl2;
+            var subtracao = vl1 - vl2;
+            var multiplicacao = vl1 * vl2;
+            var divisao = vl1 / vl2; //cuidado com a divisão por zero
+
+            alert(
+                "Soma: " + soma + "\n" +
+                "Subtração: " + subtracao + "\n" +
+                "Divisão: " + divisao + "\n" +
+                "Multiplicação: " + multiplicacao);
+        }
+        //Expressão de Função
+        var minhaFuncao = function () {
+            alert("Eu poderia exibir qualquer coisa aqui! Função expressão");
+        }
+        // FUNÇÃO EXPRESSÃO COM NOME
+        // caso necessite de recursividade, assim chamamos a função internamente
+        var fatorial = function fac(n) {
+            return n < 2 ? 1 : n * fac(n - 1);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        alert (fatorial(5));
+        // exibirMensagem();
+        // semRetorno();
+        // alert(comRetorno());
+        // comParametros(40, 20);
+        // exibir = minhaFuncao();        
+    </script>
+</body>
+
+</html>
