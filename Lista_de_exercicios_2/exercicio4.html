@@ -1,0 +1,27 @@
+<!-- 
+    4. Escreva um algoritmo em javascript para ler o salário mensal atual de um funcionário e o
+    percentual de reajuste.
+    Calcular e escrever o valor do novo salário.
+-->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Salário</title>
+    <script>
+        function calculaSalario(salarioAtual, reajuste) {
+            return salarioAtual + salarioAtual * reajuste / 100;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var salarioAtual = parseFloat(prompt("Digite o valor do salário"));
+        var reajuste = parseFloat(prompt("Digite o valor do reajuste"));
+        var salarioReajustado = calculaSalario(salarioAtual, reajuste);
+        document.write("<p>Novo salário: " + salarioReajustado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) + "</p>");
+    </script>
+</body>
+
+</html>
