@@ -10,10 +10,10 @@
     <title>Eleições</title>
     <script>
         //retorna um array de 2 resultados: percentual de brancos e percentual de nulos
-        function calculoVotos(totalEleitores,votosBrancos,votosNulos) {
-            var percentualBrancos = votosBrancos/totalEleitores*100;
-            var percentualNulos = votosNulos/totalEleitores*100;
-            var resultados = [percentualBrancos,percentualNulos];
+        function calculoVotos(totalEleitores, votosBrancos, votosNulos) {
+            var percentualBrancos = votosBrancos / totalEleitores * 100;
+            var percentualNulos = votosNulos / totalEleitores * 100;
+            var resultados = [percentualBrancos, percentualNulos];
             return resultados;
         }
     </script>
@@ -21,13 +21,22 @@
 
 <body>
     <script>
-        var totalEleitores=prompt("Digite o número de eleitores no município");
-        var votosBrancos=prompt("Digite o número de votos em branco");
-        var votosNulos=prompt("Digite o número de votos nulos");
-        var resultados = calculoVotos(totalEleitores,votosBrancos,votosNulos);
-        document.write("<p>Total de eleitores: "+totalEleitores+"</p>");        
-        document.write("<p>Percentual de votos em branco: "+resultados[0]+"%</p>");        
-        document.write("<p>Percentual de votos nulos: "+resultados[1]+"%</p>");        
+        while (true) {
+            var totalEleitores = parseInt(prompt("Digite o número de eleitores no município"));
+            var votosBrancos = parseInt(prompt("Digite o número de votos em branco"));
+            var votosNulos = parseInt(prompt("Digite o número de votos nulos"));
+
+            if (totalEleitores < (votosBrancos + votosNulos)) {
+                alert("Dados inconsistentes.\nO número de eleitores está menor que o total de brancos e nulos.");
+            } else {
+                break;
+            }
+        };
+
+        var resultados = calculoVotos(totalEleitores, votosBrancos, votosNulos);
+        document.write("<p>Total de eleitores: " + totalEleitores + "</p>");        
+        document.write("<p>Percentual de votos em branco: " + resultados[0] + "%</p>");
+        document.write("<p>Percentual de votos nulos: " + resultados[1] + "%</p>");
     </script>
 </body>
 
