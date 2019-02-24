@@ -1,0 +1,35 @@
+<!-- 
+    10. Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em
+    estoque e quantidade mínima em estoque de um produto. Calcular e escrever a quantidade
+    média ((quantidade média = quantidade máxima + quantidade mínima)/2). Se a quantidade
+    em estoque for maior ou igual a quantidade média escrever a mensagem 'Não efetuar
+    compra', senão escrever a mensagem 'Efetuar compra'.
+-->
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Controle de compras Estoque.</title>
+    <script>
+        function msgCompras(quantidadeEstoque, quantidadeMaximaEstoque, quantidadeMinimaEstoque) {
+            var media = parseFloat((quantidadeMaximaEstoque + quantidadeMinimaEstoque) / 2);
+            if (quantidadeEstoque >= media) {
+                alert("Não efetuar compra");
+            } else {
+                alert("Efetuar compra");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var quantidadeEstoque = parseInt(prompt("Digite o estoque atual"));
+        var quantidadeMaximaEstoque = parseFloat(prompt("Digite o estoque máximo"));
+        var quantidadeMinimaEstoque = parseFloat(prompt("Digite o estoque mínimo"));
+        msgCompras(quantidadeEstoque, quantidadeMaximaEstoque, quantidadeMinimaEstoque);
+    </script>
+</body>
+
+</html>
