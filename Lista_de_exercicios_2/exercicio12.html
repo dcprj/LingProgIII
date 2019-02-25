@@ -1,0 +1,36 @@
+<!-- 
+    12. Ler o nome de 2 times e o número de gols marcados na partida (para cada time).
+    Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra
+    EMPATE.
+-->
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Futebol.</title>
+    <script>
+        function vencedor(time1, gols1, time2, gols2) {
+            if (gols1 > gols2) {
+                return time1;
+            } else if (gols2 > gols1) {
+                return time2;
+            } else {
+                return "Empate";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var time1 = prompt("Nome do Time 1");
+        var gols1 = parseInt(prompt("Número de gols do Time 1"));
+        var time2 = prompt("Nome do Time 2");
+        var gols2 = parseInt(prompt("Número de gols do Time 2"));
+        var vencedor = vencedor(time1, gols1, time2, gols2);
+        document.write("<p>" + vencedor + "</p>")
+    </script>
+</body>
+
+</html>
