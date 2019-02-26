@@ -1,0 +1,33 @@
+<!-- 
+    15. Escreva um algoritmo para ler 2 valores e se o segundo valor informado for ZERO, deve
+    ser lido um novo valor, ou seja, para o segundo valor não pode ser aceito o valor zero e
+    imprimir o resultado da divisão do primeiro valor lido pelo segundo valor lido. (utilizar a
+    estrutura REPITA).
+-->
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Divisão.</title>
+
+</head>
+
+<body>
+    <script>
+        var valor1 = prompt("Digite o primeiro valor");
+        var valor2 = 0;
+
+        while (true) {
+            valor2 = prompt("Digite o segundo valor");
+            if (valor2 == 0) {
+                alert("Valor inválido. Não digite 0. Digite novamente.");
+            } else {
+                break;
+            }
+        }
+        document.write(valor1 + " ÷ " + valor2 + " = " + (valor1 / valor2));
+    </script>
+</body>
+
+</html>
