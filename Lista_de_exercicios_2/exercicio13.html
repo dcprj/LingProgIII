@@ -1,0 +1,66 @@
+<!-- 
+    13. Escreva um algoritmo que leia as idades de 2 homens e de 2 mulheres (considere que
+    as idades dos homens serão sempre diferentes entre si, bem como as das mulheres).
+    Calcule e escreva a soma das idades do homem mais velho com a mulher mais nova, e o
+    produto das idades do homem mais novo com a mulher mais velha.
+-->
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Idades.</title>
+    <script>
+        function separaIdades(idadeHomem1, idadeHomem2, idadeMulher1, idadeMulher2) {
+
+            var homemMaisVelho = 0;
+            var homemMaisNovo = 0;
+            var mulherMaisVelha = 0;
+            var mulherMaisNova = 0;
+
+            if (idadeHomem1 > idadeHomem2) {
+                homemMaisVelho = idadeHomem1;
+                homemMaisNovo = idadeHomem2;
+            } else {
+                homemMaisVelho = idadeHomem2;
+                homemMaisNovo = idadeHomem1;
+            }
+
+            if (idadeMulher1 > idadeMulher2) {
+                mulherMaisVelha = idadeMulher1;
+                mulherMaisNova = idadeMulher2;
+            } else {
+                mulherMaisVelha = idadeMulher2;
+                mulherMaisNova = idadeMulher1;
+            }
+            var idades = [homemMaisNovo, homemMaisVelho, mulherMaisNova, mulherMaisVelha];
+            return idades;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var idadeHomem1 = parseInt(prompt("Idade do homem 1"));
+        var idadeHomem2 = parseInt(prompt("Idade do homem 2"));
+        var idadeMulher1 = parseInt(prompt("Idade do mulher 1"));
+        var idadeMulher2 = parseInt(prompt("Idade do mulher 2"));
+
+        var idade = separaIdades(idadeHomem1, idadeHomem2, idadeMulher1, idadeMulher2);
+
+        var homemMaisNovo = idade[0];
+        var homemMaisVelho = idade[1];
+        var mulherMaisNova = idade[2];
+        var mulherMaisVelha = idade[3];
+
+        var resultado1 = homemMaisVelho + mulherMaisNova;
+        var resultado2 = homemMaisNovo * mulherMaisVelha;
+
+
+        document.write("<p> Homem mais velho soma com a Mulher mais nova " + resultado1 + "</p>");
+        document.write("<p> Homem mais novo multiplica com a Mulher mais velha " + resultado2 +
+            "</p>");
+    </script>
+</body>
+
+</html>
