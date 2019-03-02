@@ -1,0 +1,33 @@
+<!-- 
+    Escreva um algoritmo que leia dois vetores de 10 posições e faça a multiplicação dos
+    elementos de mesmo índice, colocando o resultado em um terceiro vetor. Mostre o vetor resultante.
+ -->
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Exercício02</title>
+
+</head>
+
+<body>
+
+    <script>
+        var vetorA = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+        var vetorB = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+        var vetorC = new Array(10);
+        for (i = 0; i < 10; i++) {
+            vetorC[i] = vetorA[i] * vetorB[i];
+        }
+        for (i = 0; i < 10; i++) {
+            document.write("<p>" + vetorC[i] + "</p>");
+        }
+        document.write("A quantidade de números pares no vetor é: " + cont);
+    </script>
+
+
+</body>
+
+</html>
