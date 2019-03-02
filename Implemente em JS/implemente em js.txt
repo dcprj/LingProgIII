@@ -1,0 +1,209 @@
+algoritmo "Exercicio02"
+// Escreva um algoritmo que leia e mostre um vetor de 20 elementos inteiros e a seguir,
+// conte quantos valores pares existem no vetor.
+var
+
+vet:vetor[1..20] de inteiro
+cont,i: inteiro
+
+inicio
+cont<-0
+escreval("Entre com 20 números inteiros:")
+para i de 1 ate 20 faca
+     escreva("Entre com o", i,"º numero:")
+     leia(vet[i])
+fimpara
+para i de 1 ate 20 faca
+     se vet[i] mod 2 = 0 entao
+       cont<-cont + 1
+     fimse
+fimpara
+escreval("A quantidade de números pares no vetor é: ", cont)
+fimalgoritmo
+
+algoritmo "Exercicio03"
+// Escreva um algoritmo que leia dois vetores de 10 posições e faça a multiplicação dos
+// elementos de mesmo índice, colocando o resultado em um terceiro vetor. Mostre o
+// vetor resultante.
+var
+
+vet1, vet2, vet3:vetor[1..10] de inteiro
+
+inicio
+escreval("Entre com 10 números inteiros do primeiro vetor:")
+para i de 1 ate 10 faca
+     escreva("Entre com o", i,"º numero:")
+     leia(vet1[i])
+fimpara
+escreval("Entre com 10 números inteiros do segundo vetor:")
+para i de 1 ate 10 faca
+     escreva("Entre com o", i,"º numero:")
+     leia(vet1[i])
+fimpara
+para i de 1 ate 10 faca
+     vet3[i] <- vet[i] * vet2[i]
+fimpara
+escreval("O vetor resultante é:")
+para i de 1 ate 10 faca
+     escreva(vet3[i])
+fimpara
+
+fimalgoritmo
+
+algoritmo "Exercicio04"
+// Escreva um algoritmo que leia um vetor de 20 posições e mostre-o. Em seguida,
+// troque o primeiro elemento com o último, o segundo com o penúltimo, o terceiro com
+// o antepenúltimo, e assim sucessivamente. Mostre o novo vetor depois da troca.
+var
+
+vet:vetor[1..20] de inteiro
+i,aux:inteiro
+inicio
+escreval("Entre com 20 números inteiros do primeiro vetor:")
+para i de 1 ate 20 faca
+     escreva("Entre com o", i,"º numero:")
+     leia(vet[i])
+fimpara
+escreval("O vetor original é:")
+para i de 1 ate 20 faca
+     escreva(vet[i])
+fimpara
+para i de 1 ate 10 faca // a troca é feita apenas até a metade do vetor
+  aux<- vet[i]
+  vet[i]<-vet[21-i] // tamanho total do vetor + 1 menos a posição inicial
+  vet[21-i]<-aux
+fimpara
+escreval("O vetor resultante é:")
+para i de 1 ate 20 faca
+     escreva(vet[i])
+fimpara
+
+fimalgoritmo
+
+algoritmo "Exercicio05"
+// Faça um algoritmo que leia 20 valores e os escreva na ordem contrária à que foram
+//digitados
+var
+
+vet:vetor[1..20] de inteiro
+i:inteiro
+inicio
+escreval("Entre com 20 números inteiros do primeiro vetor:")
+para i de 1 ate 20 faca
+     escreva("Entre com o", i,"º numero:")
+     leia(vet[i])
+fimpara
+escreval("O vetor na ordem contrária à original é:")
+para i de 20 ate 1 passo -1 faca
+     escreva(vet[i])
+fimpara
+fimalgoritmo
+
+
+algoritmo "Exercicio06"
+// Escreva um algoritmo que leia um vetor de 13 elementos inteiros, que é o Gabarito de
+// um teste da loteria esportiva, contendo os valores 1 (coluna 1), 2 (coluna 2) e 3 (coluna
+// do meio). Leia, a seguir, para cada apostador, o número do seu cartão e um vetor de
+// Respostas de 13 posições. Verifique para cada apostador o número de acertos,
+// comparando o vetor de Gabarito com o vetor de Respostas. Escreva o número do
+// apostador e o número de acertos. Se o apostador tiver 13 acertos, mostrar a
+// mensagem "Ganhador".
+var
+
+cartao, gabarito:vetor[1..13] de inteiro
+quant, numapostador, i:inteiro
+novo:caractere
+inicio
+novo<-"S"
+escreval("Entre com o gabarito da loteria esportiva:")
+para i de 1 ate 13 faca
+     escreva("Entre com a resposta do", i,"º jogo:")
+     leia(gabarito[i])
+fimpara
+
+enquanto novo <> "N" faca
+escreval("Entre com o numero do cartao do apostador: ")
+leia(numapostador)
+escreval("Entre com o cartão da loteria esportiva do apostador:")
+para i de 1 ate 13 faca
+     escreva("Entre com a resposta do", i,"º jogo:")
+     leia(cartao[i])
+fimpara
+// comparando resultado
+quant<-0
+para i de 1 ate 13 faca
+     se cartao[i] = gabarito[i] entao
+       quant<-quant + 1
+     fimse
+fimpara
+   escreval("O apostador de cartão numero ", numapostador, " fez", quant, " pontos")
+   se quant = 13 entao
+     escreval(" Parabéns!! Você é um dos Ganhadores!!!!")
+   fimse
+  escreval("Deseja conferir outro cartão? Digite S para Sim ou N para Não")
+  leia(novo)
+fimenquanto
+fimalgoritmo
+
+algoritmo "Exercicio07"
+// Escreva um algoritmo que leia um vetor de 10 posições de números inteiros e
+// imprimir, logo após, gerar 2 vetores a partir dele, um contendo os elementos de
+// posições ímpares do vetor e o outro os elementos de posições pares. Imprimi-los no
+// final.
+var
+
+vet:vetor[1..10] de inteiro
+vetpospar, vetposimpar:vetor[1..5] de inteiro
+j,i:inteiro
+inicio
+escreval("Entre com o 10 números inteiros:")
+para i de 1 ate 10 faca
+     escreva("Entre com o", i,"º número:")
+     leia(vet[i])
+fimpara
+j<-0
+para i de 1 ate 10 faca
+    se i mod 2 <> 0 entao
+    j<-j+1
+     vetposimpar[j]<-vet[i]
+    senao
+      vetpospar[j]<-vet[i]
+    fimse
+fimpara
+// comparando resultado
+escreval("O números na posição par são: ")
+para i de 1 ate 5 faca
+  escreva(vetpospar[i])
+fimpara
+escreval("O números na posição impar são: ")
+para i de 1 ate 5 faca
+   escreva(vetposimpar[i])
+fimpara
+
+fimalgoritmo
+
+
+algoritmo "Exercicio08"
+// Escreva um algoritmo que leia um vetor de 7 elementos inteiros. Encontre e mostre o
+// menor elemento e sua posição no vetor.
+var
+
+vet:vetor[1..7] de inteiro
+posicao,menor,i:inteiro
+inicio
+escreval("Entre com o 7 números inteiros:")
+para i de 1 ate 7 faca
+     escreva("Entre com o", i,"º número:")
+     leia(vet[i])
+fimpara
+menor<-vet[1]
+posicao<-1
+para i de 2 ate 7 faca
+     se menor > vet[i] entao
+      menor<- vet[i]
+      posicao<-i
+     fimse
+fimpara
+   escreva("O menor elemento do vetor é" , menor, " e está na posição ",posicao)
+
+fimalgoritmo
