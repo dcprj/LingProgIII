@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ordenação.</title>
+    <script>
+        function ordenacao() {
+            var vetor1 = [13, 9, 7, 3, 8, 25, 32, 5, 4, 31];
+            
+
+            for (i = 0; i < vetor1.length; i++) {
+                for (j = i + 1; j < vetor1.length; j++) {
+                    if (vetor1[i] > vetor1[j]) {
+                        temp = vetor1[i];
+                        vetor1[i] = vetor1[j];
+                        vetor1[j] = temp;
+                    }
+                }
+            }
+
+            for (i = 0; i < vetor1.length; i++) {
+                document.write("<p>" + vetor1[i] + "</p>")
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <script>
+        ordenacao();
+    </script>
+
+
+</body>
+
+</html>
