@@ -1,0 +1,39 @@
+<!-- 
+    Escreva um algoritmo que leia um vetor de 13 elementos inteiros, que é o Gabarito de
+    um teste da loteria esportiva, contendo os valores 1 (coluna 1), 2 (coluna 2) e 3 (coluna
+    do meio). Leia, a seguir, para cada apostador, o número do seu cartão e um vetor de
+    Respostas de 13 posições. Verifique para cada apostador o número de acertos,
+    comparando o vetor de Gabarito com o vetor de Respostas. Escreva o número do
+    apostador e o número de acertos. Se o apostador tiver 13 acertos, mostrar a
+    mensagem "Ganhador".
+
+ -->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Exercício08</title>
+</head>
+
+<body>
+    <script>
+        var volante = [1, 1, 1, 1, 3, 2, 2, 1, 1, 2, 1, 2, 3];
+        var resultado = [1, 1, 1, 1, 3, 2, 2, 1, 1, 2, 1, 2, 3];
+        var numeroAposta = 3565;
+        var acertos = 0;
+        for (i = 0; i < 13; i++) {
+            if (volante[i] == resultado[i]) {
+                acertos++;
+            }
+        }
+        if (acertos == 13) {
+            document.write("<p> A aposta nº " + numeroAposta + " fez " + acertos + " pontos </p>");
+            document.write("<p> Você é um ganhador </p>");
+        } else {
+            document.write("<p> A aposta nº " + numeroAposta + " fez " + acertos + " pontos </p>");
+        }
+    </script>
+</body>
+
+</html>
