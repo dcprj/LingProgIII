@@ -1,0 +1,79 @@
+<!-- 
+    4. Escreva um programa que leia dois números e apresente um menu de opções como o mostrado abaixo:
+    Escolha a opção: A- Soma de 2 números. B- Diferença entre 2 números (maior pelo menor). C- Produto entre 2 números. D- Divisão entre 2 números
+    (o denominador não pode ser zero).
+    Leia a opção do usuário e execute a operação com os dois números lidos anteriormente. Caso a opção digitada seja inválida,
+    apresente a mensagem de “Opção inválida” para o usuário. Lembre-se de usar funções para organizar seu programa.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Calculadora.</title>
+    <script>
+        function soma(a, b) {
+            return a + b;
+        }
+
+        function subtracao(a, b) {
+            if (a >= b) {
+                return a - b;
+            } else {
+                return b - a;
+            }
+        }
+
+        function multiplicacao(a, b) {
+            return a * b;
+        }
+
+        function divisao(a, b) {
+            if (b == 0) {
+                return 'Erro de Divisão por Zero'                
+            } else {
+                return a / b;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <script>
+        var numeroA = parseFloat(prompt("Entre com o primeiro valor"));
+        var numeroB = parseFloat(prompt("Entre com o segundo valor"));
+        var opcao = prompt(
+            "A - Soma de 2 números\nB - Diferença entre 2 números (maior pelo menor)\nC - Produto entre 2 números\nD - Divisão entre 2 números"
+        );
+
+        switch (opcao) {
+            case 'A':
+            case 'a':
+                alert("O resultado é: " + soma(numeroA, numeroB));
+                break;
+
+            case 'B':
+            case 'b':
+                alert("O resultado é: " + subtracao(numeroA, numeroB));
+                break;
+
+            case 'C':
+            case 'c':
+                alert("O resultado é: " + multiplicacao(numeroA, numeroB));
+                break;
+
+            case 'D':
+            case 'd':
+                alert("O resultado é: " + divisao(numeroA, numeroB));
+                break;
+
+            default:
+                document.write("Opção Inválida");
+        }
+    </script>
+
+
+</body>
+
+</html>
