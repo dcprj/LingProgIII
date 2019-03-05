@@ -1,0 +1,92 @@
+<!-- 
+    5. Uma eleição possui 2 candidatos a prefeito: o candidato José, do Partido da Felicidade e o candidato João, do Partido da Esperança.
+    Os eleitores votam nos candidatos pelo número do partido. Para votar no candidato José do Partido da Felicidade, precisam digitar o número 1.
+    Para votar no candidato João, do Partido da Esperança, precisam digitar o número 2.
+    Faça um programa que simule uma urna eletrônica.
+    Para cada eleitor, deve ser lido o número do seu título e em seguida o eleitor poderá digitar o seu voto.
+    A eleição é encerrada quando um valor negativo (menor do que 0) para o título do eleitor é digitado.
+    Informe quantos votos cada candidato teve e qual deles ganhou a eleição.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Eleições.</title>
+    <script>
+        var nomeCandidato = ['José', 'João'];
+        var nomePartido = ['Partido da Felicidade', 'Partido da Esperança'];
+        var numerosPartido = [1, 2];
+        var voto = new Array();
+
+        function votacao() {
+            var i = -1;
+            var tituloDigitado = -1;
+            var votoDigitado = 0;
+            while (tituloDigitado != 0) {
+                tituloDigitado = prompt("Digite o número do Título de Eleitor (0 encerra a votação)");
+                if (tituloDigitado == 0) {
+                    break;
+                } else {
+                    i++;
+                    votoDigitado = prompt("Digite o número do seu candidato");
+                    voto[i] = [tituloDigitado, votoDigitado];
+                }
+            }
+            return voto;
+        }
+
+        function imprimeVotacao(eleicao) {
+            document.write("Título..........Voto<br />");
+            document.write("===============<br />");
+            for (i = 0; i <= arguments.length; i++) {
+                document.write(arguments[i][0] + "..............." + nomeCandidato[arguments[i][1] - 1] + "<br />");
+            }
+        }
+
+        function calculaResultado(eleicao) {
+            var totalDeVotos = arguments.length;
+            var voto = [0, 0];
+            var votosNulos = 0;
+            var votosValidos = 0;
+            for (i = 0; i < totalDeVotos; i++) {
+                if (arguments[i][1] == 1) {
+                    voto[0] = voto[0] + 1;
+                    votosValidos++;
+                } else if (arguments[i][1] == 2) {
+                    voto[1] = voto[1] + 1;
+                    votosValidos++;
+                } else {
+                    votosNulos++;
+                }
+            }
+            document.write("A eleição contou com " + votosValidos + " voto(s) válidos e " + votosNulos +
+                " voto(s) nulos <br />");
+            document.write("===================================================================<br />")
+            for (i = 0; i < nomeCandidato.length; i++) {
+                document.write("O candidato " + nomeCandidato[i] + ", do partido " + nomePartido[i] + ", obteve " +
+                    voto[i] + " votos<br /><br />");
+            }
+            if (voto[0] > voto[1]) {
+                document.write("O vencedor é o candidato " + nomeCandidato[0] + ", do partido " + nomePartido[0]);
+            } else if (voto[1] > voto[0]) {
+                document.write("O vencedor é o candidato " + nomeCandidato[1] + ", do partido " + nomePartido[1]);
+            } else {
+                document.write("Houve empate entre os candidatos.");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <script>
+        var votacao = votacao();
+        calculaResultado(...votacao);
+    </script>
+
+
+</body>
+
+</html>
