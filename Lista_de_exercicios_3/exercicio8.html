@@ -1,0 +1,40 @@
+<!-- 
+    8. Temos um vetor de 5 posições, com o nome de 5 itens que nosso herói carrega na mochila.
+    Quando o personagem chega numa porta, queremos detectar automaticamente se ele tem o não uma chave para deixá-lo passar.
+    Crie uma função TemChave que percorre o vetor comparando se cada item tem o nome “chave” e retorne verdadeiro se encontrar alguma.
+    Caso contrário, a função deve retornar falso.
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Inventário.</title>
+    <script>
+        var mochila = new Array();
+
+        function temChave(objetos) {
+            for (i = 0; i < arguments.length; i++) {
+                if (arguments[i]=='chave') {
+                    return true;
+                }                                
+            }
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        mochila = ['alicate', 'cobertor', 'chave', 'parafuso', 'lanterna'];
+        if (temChave(...mochila)){
+            alert("Temos a chave");
+        }
+        else {
+            alert("Não temos a chave");
+        }
+    </script>
+</body>
+
+</html>
