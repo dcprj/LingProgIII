@@ -1,0 +1,31 @@
+<!-- 
+    7. Para um jogo, precisamos saber se um personagem morreu ou não depois de sofrer um ataque. Faça uma função que receba 2 parâmetros,
+    DANO e SAUDE. A função deve retornar verdadeiro se o dano for matar o personagem (ou seja, deixar sua saúde menor ou igual a zero)
+    e falso caso contrário.
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Dano e Saúde.</title>
+    <script>
+        function ataque(dano, saude) {
+            return ((saude - dano) >= 0);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        a = ataque(100, 160);
+        if (a) {
+            document.write("Personagem sobreviveu.")
+        } else {
+            document.write("Personagem morreu.")
+        }
+    </script>
+</body>
+
+</html>
