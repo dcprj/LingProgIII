@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="modulo">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercício 1 da Lista 1</title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .form-control {
+                margin-bottom: 10px;
+            }
+        #conteudo {
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+    <script src="../lib/angular.js"></script>
+    <script>
+        angular.module("modulo",[]);
+        angular.module("modulo").controller("moduloCtrl", function ($scope) {
+                $scope.app = "Calcula a Área de um Retângulo";
+                $scope.calculaArea=function(lado1,lado2){
+                    $scope.area = lado1 * lado2;
+            }
+        });    
+    </script>
+</head>
+
+<body ng-controller="moduloCtrl">
+    <div id="conteudo" class="container">
+        <h1 class="jumbotron">{{app}}</h1>
+        <label>Lado 1:</label>
+        <input class="form-control" type="text" ng-model="lado1" />
+        <label>Lado 2:</label>
+        <input class="form-control" type="text" ng-model="lado2" />
+        <label>Área:</label>
+        <input readonly class="form-control" type="text" ng-model="area" />
+        <button class="btn btn-primary btn-block" ng-click="calculaArea(lado1,lado2)">Calcula Área</button>
+    </div>
+</body>
+
+</html>

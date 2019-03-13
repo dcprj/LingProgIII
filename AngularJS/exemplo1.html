@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </meta>
+    <title>Título</title>
+    <script src="angular.js">
+    </script>
+    <script>
+        var app = angular.module('modulo1', []);
+        app.controller('meuController', ['$scope',
+            function ($scope) {
+                $scope.mensagem = "Desenvolvendo com Angular JS";
+                $scope.nome = "CONAN";
+                $scope.filme = "BARBÁRIE TOTAL";
+                $scope.doModeloParaOController = $scope.cDadosModelo;
+                $scope.valor2 = $scope.doModeloParaOController;
+            }
+        ]);
+    </script>
+</head>
+
+<body ng-app="modulo1">
+    <div ng-view>
+        <div ng-controller="meuController" class="wrapper">
+            {{mensagem}}
+            <br />
+            <h2>FILMES</h2>
+            <p>Nome: {{nome}}</p>
+            <p>Filme: {{filme}}</p>
+            <br />
+            <div style="background-color: yellow; font-weight:bold">
+                <label>Telefone:</label>
+                <input type="text" name="telefone" id="telefone" ng-model="telefone">
+                <br />
+
+                <label>Dados Modelo:</label>
+                <input type="text" name="dadosModelo" id="dadosModelo" ng-model="cDadosModelo">
+
+                <h3>O número do telefone usando NG-MODEL</h3>
+                {{telefone}}
+                <h4>cDadosModelo: {{cDadosModelo}}</h4>
+                <h4>Valor2: {{valor2}}</h4>
+                <h4>doModeloParaOController: {{doModeloParaOController}}</h4>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

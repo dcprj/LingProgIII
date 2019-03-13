@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="modulo">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercício 2 da Lista 1</title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .form-control {
+                margin-bottom: 10px;
+            }
+        #conteudo {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+    <script src="../lib/angular.js"></script>
+    <script>
+        angular.module("modulo",[]);
+        angular.module("modulo").controller("moduloCtrl", function ($scope) {
+                $scope.app = "Calcula Ferraduras";
+                $scope.calculaFerraduras=function(cavalos){
+                    $scope.ferraduras = cavalos * 4;
+            }
+        });    
+    </script>
+</head>
+
+<body ng-controller="moduloCtrl">
+    <div id="conteudo" class="container">
+        <h1 class="jumbotron">{{app}}</h1>
+        <label>Número de cavalos:</label>
+        <input class="form-control" type="text" ng-model="cavalos" />
+        <label>Ferraduras:</label>
+        <input readonly class="form-control" type="text" ng-model="ferraduras" />
+        <button class="btn btn-primary btn-block" ng-click="calculaFerraduras(cavalos)">Calcula Ferraduras</button>
+    </div>
+</body>
+
+</html>

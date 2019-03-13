@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="modulo">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercício 3 da Lista 1</title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .form-control {
+                margin-bottom: 10px;
+            }
+        #conteudo {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-locale_pt-br.js"></script>
+    <script>
+        angular.module("modulo",[]);
+        angular.module("modulo").controller("moduloCtrl", function ($scope) {
+                $scope.app = "Padaria Hotpão";
+                var precoPao = 0.12;
+                var precoBroa = 1.50;
+                $scope.calculaVendas=function(quantPao,quantBroa){
+                    $scope.totalVendido = (quantPao * precoPao) + (quantBroa * precoBroa);                    
+                    $scope.valorPoupanca = $scope.totalVendido * 0.10;
+                }                
+        });    
+    </script>
+</head>
+
+<body ng-controller="moduloCtrl">
+    <div id="conteudo" class="container">
+        <h1 class="jumbotron">{{app}}</h1>
+        <label>Pães vendidos:</label>
+        <input class="form-control" type="text" ng-model="quantPao" />
+        <label>Broas vendidas:</label>
+        <input class="form-control" type="text" ng-model="quantBroa" />
+        <label>Faturamento total:</label>
+        <input readonly class="form-control" type="text" value="{{totalVendido | currency:'R$ '}}" />
+        <label>Valor para poupança:</label>
+        <input readonly class="form-control" type="text" value="{{valorPoupanca | currency:'R$ '}}"/>
+        <button class="btn btn-primary btn-block" ng-click="calculaVendas(quantPao,quantBroa)">Calcula Vendas</button>
+    </div>
+</body>
+
+</html>

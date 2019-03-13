@@ -1,0 +1,84 @@
+<!-- 
+    10. Crie uma classe de objeto, usando uma função construtora, chamada Carta.
+    A função construtora recebe os parâmetros pNumero e pNaipe, que são guardados nos atributos numero e naipe.
+    Esse objeto também tem o método exibir(), que mostra as informações da carta na tela de maneira legível (ex. “7 de paus”).
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Exercício10.</title>
+    <script>
+        var cartas = [{
+                numero: 'A',
+                nome: 'Ás'
+            },
+            {
+                numero: '2',
+                nome: 'Dois'
+            },
+            {
+                numero: '3',
+                nome: 'Três'
+            },
+            {
+                numero: '4',
+                nome: 'Quatro'
+            },
+            {
+                numero: '5',
+                nome: 'Cinco'
+            },
+            {
+                numero: '6',
+                nome: 'Seis'
+            },
+            {
+                numero: '7',
+                nome: 'Sete'
+            },
+            {
+                numero: '8',
+                nome: 'Oito'
+            },
+            {
+                numero: '9',
+                nome: 'Nove'
+            },
+            {
+                numero: '10',
+                nome: 'Dez'
+            },
+            {
+                numero: 'J',
+                nome: 'Valete'
+            },
+            {
+                numero: 'Q',
+                nome: 'Dama'
+            },
+            {
+                numero: 'R',
+                nome: 'Rei'
+            }
+        ];
+    </script>
+
+</head>
+
+<body>
+    <script>
+        document.write(cartas.length + "<br />");
+        cartas.forEach(function (carta) {
+            document.write(carta.numero + " = " + carta.nome + "<br />")
+        });
+        document.write(cartas.length + "<br />");
+        for (i = 0; i < cartas.length; i++) {
+            document.write(cartas[i].numero + " = " + cartas[i].nome + "<br />")
+        };
+   
+    </script>
+</body>
+
+</html>

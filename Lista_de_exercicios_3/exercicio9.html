@@ -1,0 +1,43 @@
+<!-- 
+    9. Precisamos limitar as posições em que um inimigo pode andar na tela.
+    A menor posição possível é 0 e a maior, 100: qualquer valor maior que 100
+    ou menor que 0 sairia fora da tela.
+    Precisamos de uma função LimitaPosicao que recebe uma POSICAO que pode ter
+    qualquer valor positivo ou negativo, verifica se ela é válida ou não
+    e retorna sempre um valor corrigido entre 0 e 100.
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Limita Posição.</title>
+    <script>
+        function limitaPosicao(posicao) {
+
+            if (posicao < 0) {
+                return 0;
+            } else if (posicao > 100) {
+                return 100;
+            } else {
+                return posicao;
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <script>
+        document.write(limitaPosicao(-10)+"<br />");
+        document.write(limitaPosicao(0)+"<br />");
+        document.write(limitaPosicao(20)+"<br />");
+        document.write(limitaPosicao(45)+"<br />");
+        document.write(limitaPosicao(100)+"<br />");
+        document.write(limitaPosicao(101)+"<br />");
+    </script>
+</body>
+
+</html>
